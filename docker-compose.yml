@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  mongo-container:
+    image: mongo:4.2
+    env_file: 
+      - .env
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db:/data/db
+    restart: unless-stopped
